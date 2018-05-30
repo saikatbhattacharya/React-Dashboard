@@ -1,0 +1,16 @@
+{
+    "apps": [
+      {
+        "name": "billwale",
+        "script": "src/server/index.js",
+        "watch": ["src/server"],
+        "env": {
+          "DEBUG": "fetch:*"
+        },
+        "log_file": "./logs/pm2logs/billwale.log",
+        "out_file": "./logs/pm2logs/billwale_out.log",
+        "err_file": "./logs/pm2logs/billwale_error.log"
+      }
+    ]
+  }
+  
