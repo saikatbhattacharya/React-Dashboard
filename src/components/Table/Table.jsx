@@ -9,11 +9,14 @@ import {
 } from "material-ui";
 
 import PropTypes from "prop-types";
+import _map from "lodash/map";
 
 import tableStyle from "assets/jss/material-dashboard-react/tableStyle";
 
 function CustomTable({ ...props }) {
-  const { classes, tableHead, tableData, tableHeaderColor } = props;
+  const { classes, tableData, tableHeaderColor } = props;
+  const tableHead = Object.keys(tableData[0]);
+  const tableBodyData = _map(tableData, (eachData) => _map(tableHead, (eachHeader => eachData[eachHeader])));
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -34,7 +37,7 @@ function CustomTable({ ...props }) {
           </TableHead>
         ) : null}
         <TableBody>
-          {tableData.map((prop, key) => {
+          {tableBodyData.map((prop, key) => {
             return (
               <TableRow key={key}>
                 {prop.map((prop, key) => {
@@ -68,8 +71,7 @@ CustomTable.propTypes = {
     "rose",
     "gray"
   ]),
-  tableHead: PropTypes.arrayOf(PropTypes.string),
-  tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
+  tableData: PropTypes.array
 };
 
 export default withStyles(tableStyle)(CustomTable);
