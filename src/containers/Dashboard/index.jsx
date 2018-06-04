@@ -6,14 +6,14 @@ import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import { withStyles } from "material-ui";
 
-import { Header, Footer, Sidebar } from "components";
+import { Header, Sidebar } from "components";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
 import appStyle from "assets/jss/material-dashboard-react/appStyle.jsx";
 
 import image from "assets/img/sidebar-2.jpg";
-import logo from "assets/img/reactlogo.png";
+//import logo from "assets/img/reactlogo.png";
 
 const switchRoutes = (
   <Switch>
@@ -48,8 +48,8 @@ class App extends React.Component {
       <div className={classes.wrapper}>
         <Sidebar
           routes={dashboardRoutes}
-          logoText={"Creative Tim"}
-          logo={logo}
+          logoText={"Bille"}
+          
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
@@ -65,7 +65,7 @@ class App extends React.Component {
           <div className={classes.content}>
             <div className={classes.container}>{switchRoutes}</div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     );

@@ -17,42 +17,43 @@ import {
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    sidebarName: "Dashboard",
+    sidebarName: "Summary",
     navbarName: "Material Dashboard",
     icon: Dashboard,
     component: DashboardPage
   },
   {
+    path: "/table",
+    sidebarName: "Customer",
+    navbarName: "Table List",
+    icon: ContentPaste,
+    component: TableList
+  },
+
+  {
     path: "/user",
-    sidebarName: "User Profile",
+    sidebarName: "Inventory",
     navbarName: "Profile",
     icon: Person,
     component: UserProfile
   },
   {
-    path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
-    icon: ContentPaste,
-    component: TableList
-  },
-  {
     path: "/typography",
-    sidebarName: "Typography",
+    sidebarName: "Employee",
     navbarName: "Typography",
     icon: LibraryBooks,
     component: Typography
   },
   {
     path: "/icons",
-    sidebarName: "Icons",
+    sidebarName: "Menu",
     navbarName: "Icons",
     icon: BubbleChart,
     component: Icons
   },
   {
     path: "/notifications",
-    sidebarName: "Notifications",
+    sidebarName: "Offers",
     navbarName: "Notifications",
     icon: Notifications,
     component: NotificationsPage
